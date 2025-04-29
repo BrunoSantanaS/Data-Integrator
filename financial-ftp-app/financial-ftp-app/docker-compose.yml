@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  ftp:
+    image: bogem/ftp
+    restart: always
+    container_name: ftp_server
+    ports:
+      - "20:20"
+      - "21:21"
+      - "47400-47470:47400-47470"
+    environment:
+      FTP_USER: admin
+      FTP_PASS: adminpassword
+      PASV_ADDRESS: localhost
+    volumes:
+      - ./configs/ftp:/home/vsftpd
+    networks:
+      - ftp_network
+
+networks:
+  ftp_network:
+    driver: bridge
+
+volumes:
+  ftp_data:

@@ -1,0 +1,12 @@
+user content for /financial-ftp-app/financial-ftp-app/configs/ftp/config.txt 
+
+user_credentials=user:password
+anonymous_enable=NO
+local_root=/home/vftp
+upload_enable=YES
+write_enable=YES
+dirmessage_enable=YES
+use_localtime=YES
+pasv_enable=YES
+pasv_min_port=10000
+pasv_max_port=10100

@@ -1,0 +1,4 @@
+djangorestframework==3.16.0
+Django==5.2.0
+drf-spectacular==0.28.0
+Flake8==7.2.0
