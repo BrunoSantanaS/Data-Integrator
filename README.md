@@ -27,8 +27,8 @@ This project consists of multiple components. Detailed instructions for running 
 
 | Component                           | Description                                           | README Link                                                                 |
 |-------------------------------------|-------------------------------------------------------|-----------------------------------------------------------------------------|
-| Financial FTP Application           | Docker setup to emulate an FTP server for financial services. | [FTP Server README](financial-ftp-app/financial-ftp-app/README.md)           |
-| Django FTP Consumer Application     | Django app that consumes data from the FTP server via REST APIs. | [Django App README](app/README.md)                                          |
+| Financial FTP Application           | Docker setup to emulate an FTP server for financial services. | [FTP Server README](financial-ftp-app/README.md)                    |
+| Django FTP Consumer Application     | Django app that consumes data from the FTP server via REST APIs. | [Django App README](app/README.md)                               |
 
 ---
 

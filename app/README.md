@@ -78,6 +78,9 @@ Tests cover key functionalities such as creating, listing, updating, deleting, a
 - **Advanced FTP Operations:**
   Extend FTP functionalities with additional operations and error handling.
 
+- **Deployment Considerations:**
+  Provide guidelines for deploying the WSGI server to scale the application. This may include configuring multiple worker processes (using Gunicorn or uWSGI), setting up a reverse proxy (such as Nginx), and implementing load balancing.
+
 ## License
 
 This project is licensed under the MIT License.
