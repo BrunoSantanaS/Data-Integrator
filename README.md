@@ -72,6 +72,7 @@ This project consists of multiple components. Detailed instructions for running 
 | RabbitMQ Server Application         | Docker setup to run the RabbitMQ services (pub/sub).          | [RabbitMQ Server README](financial-rabbitmq/README.md)              |
 | FTP Server Application              | Docker setup to emulate an FTP server for financial services. | [FTP Server README](financial-ftp-app/README.md)                    |
 | Django FTP Consumer Application     | Django app that consumes data from the FTP server via REST APIs. | [Django App README](app/README.md)                               |
+| Automated Tasks Producer            | Script to fetch data from the Django Rest API and send message to RabbitMQ | [Producer Script README](tasks\producer\README.md)     |
 
 ---
 
