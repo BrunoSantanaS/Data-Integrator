@@ -1,8 +1,24 @@
-# Financial FTP Application
+- [1. Financial FTP Application](#1-financial-ftp-application)
+  - [1.1. What is an FTP Server?](#11-what-is-an-ftp-server)
+- [2. Project Structure](#2-project-structure)
+- [3. Instalation](#3-instalation)
+  - [3.1. Prerequisites](#31-prerequisites)
+  - [3.2. Getting Started](#32-getting-started)
+  - [3.3. Stopping the Server](#33-stopping-the-server)
+  - [3.4. License](#34-license)
 
-This project provides a simple way to set up an FTP server using Docker. It utilizes the `bogem/ftp` image to create a configurable FTP server for financial services.
 
-## Project Structure
+# 1. Financial FTP Application
+
+This project provides a simple way to set up an FTP server using Docker. It utilizes the `bogem/ftp` image to create a configurable FTP server for simulating financial services from external partners.
+
+In this demo every Client Folder will hold a different file format to be consumed by automated task files that will be consumed are: `CSV`, `XML` and `JSON`
+
+## 1.1. What is an FTP Server?
+
+An FTP (File Transfer Protocol) server is a service that enables the transfer of files between computers over a network. It allows users to upload, download, and manage files remotely, making it ideal for sharing data securely and efficiently.
+
+# 2. Project Structure
 
 ```
 financial-ftp-app
@@ -10,19 +26,29 @@ financial-ftp-app
 ├── configs
 │   └── ftp
 │       └── config.txt
+│       └── client1    <- Simulates an FTP server
+│       └── client2    <- Simulates an FTP server
+│       └── client3    <- Simulates an FTP server
+|
 ├── scripts
 │   └── start.sh
 └── README.md
 ```
 
-## Prerequisites
+*Note: The client directories (client1, client2, client3) are abstracted for demo purposes to simulate different FTP servers from various sources.*
+
+# 3. Instalation
+
+This section provides information on how to run the service using Docker
+
+## 3.1. Prerequisites
 
 - Docker installed on your machine
 - Docker Compose installed
 
-## Getting Started
+## 3.2. Getting Started
 
-To get started with the Financial FTP Application, follow these steps:
+To get started with the Financial FTP Server Application, follow these steps:
 
 1. **Clone the repository:**
 
@@ -47,7 +73,7 @@ To get started with the Financial FTP Application, follow these steps:
 
    Once the server is running, you can connect to it using an FTP client with the credentials specified in the `config.txt` file.
 
-## Stopping the Server
+## 3.3. Stopping the Server
 
 To stop the FTP server, you can run:
 
@@ -55,6 +81,6 @@ To stop the FTP server, you can run:
 docker-compose down
 ```
 
-## License
+## 3.4. License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
