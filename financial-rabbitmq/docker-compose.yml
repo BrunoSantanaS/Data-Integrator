@@ -1,0 +1,11 @@
+services:
+  rabbitmq:
+    image: rabbitmq:4-management
+    restart: always
+    container_name: rabbitmq_server
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: adminpassword
