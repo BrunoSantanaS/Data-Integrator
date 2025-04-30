@@ -1,5 +1,4 @@
 from django.test import TestCase
-
 from ftp_consumer.models import FTPConnection
 
 
@@ -17,13 +16,15 @@ class FTPConnectionModelTest(TestCase):
             port=21,
             username='user',
             password='password',
-            directory='/path/to/directory'
+            directory='/path/to/directory',
+            content_type='json'
         )
         self.assertEqual(ftp_connection.host, 'ftp.example.com')
         self.assertEqual(ftp_connection.port, 21)
         self.assertEqual(ftp_connection.username, 'user')
         self.assertEqual(ftp_connection.password, 'password')
         self.assertEqual(ftp_connection.directory, '/path/to/directory')
+        self.assertEqual(ftp_connection.content_type, 'json')
 
     def test_list_ftp_connections(self):
         """
@@ -34,14 +35,17 @@ class FTPConnectionModelTest(TestCase):
             port=21,
             username='user1',
             password='password1',
-            directory='/path/to/directory1'
+            directory='/path/to/directory1',
+            content_type='json'
+
         )
         ftp_connection2 = FTPConnection.objects.create(
             host='ftp.example2.com',
             port=21,
             username='user2',
             password='password2',
-            directory='/path/to/directory2'
+            directory='/path/to/directory2',
+            content_type='json'
         )
         ftp_connections = FTPConnection.objects.all()
         self.assertEqual(len(ftp_connections), 2)
@@ -57,7 +61,8 @@ class FTPConnectionModelTest(TestCase):
             port=21,
             username='user',
             password='password',
-            directory='/path/to/directory'
+            directory='/path/to/directory',
+            content_type='json'
         )
         ftp_connection.delete()
         with self.assertRaises(FTPConnection.DoesNotExist):
@@ -72,7 +77,8 @@ class FTPConnectionModelTest(TestCase):
             port=21,
             username='user',
             password='password',
-            directory='/path/to/directory'
+            directory='/path/to/directory',
+            content_type='json'
         )
         ftp_connection.host = 'ftp.updated.com'
         ftp_connection.save()
@@ -88,7 +94,8 @@ class FTPConnectionModelTest(TestCase):
             port=21,
             username='user',
             password='password',
-            directory='/path/to/directory'
+            directory='/path/to/directory',
+            content_type='json'
         )
         retrieved_ftp_connection = FTPConnection.objects.get(id=ftp_connection.id)
         self.assertEqual(retrieved_ftp_connection, ftp_connection)
