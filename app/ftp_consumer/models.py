@@ -8,6 +8,11 @@ class FTPConnection(models.Model):
     username = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
     directory = models.CharField(max_length=255)
+    content_type = models.CharField(max_length=255, choices=[
+        ('json', 'JSON File'),
+        ('csv', 'CSV File'),
+        ('xml', 'XML File'),
+    ], default=None)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
